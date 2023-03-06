@@ -61,6 +61,37 @@
                 "verano"
             ],
             "Favorita": false
+        },
+        {
+            "Nombre": "Empanada",
+            "Ingredientes": [
+                [
+                    1,
+                    "unidad",
+                    "papa"
+                ],
+                [
+                    1,
+                    "kg",
+                    "carne"
+                ],
+                [
+                    2,
+                    "un",
+                    "cebolla"
+                ]
+            ],
+            "Preparacion": "cocinar todo junto,\ny sazonar a gusto",
+            "Imagen": null,
+            "Tiempo_prepacion": 800,
+            "Tiempo_coccion": 400,
+            "Fecha_creacion": "2023-03-06",
+            "Etiquetas": [
+                "rico",
+                "sano",
+                "verano"
+            ],
+            "Favorita": true
         }
     ]
 }

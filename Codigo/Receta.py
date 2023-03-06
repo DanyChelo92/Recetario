@@ -1,7 +1,5 @@
 import datetime
 import json
-import sys
-
 
 class Receta:
     def __init__(self, nombre, ingredientes, preparacion, tiempo_preparacion, 
@@ -51,8 +49,33 @@ class Receta:
                 lista['recetas'].append(receta)
                 json.dump(lista,archivo,indent=4)      
     
-    def modificar_receta(self):
-        pass
+    def modificar_receta(self,nombre):
+        try:
+            with open('recetas.txt','r') as archivo:
+                lista=json.load(archivo)  
+            print(lista)    
+            indice=None    
+            for index,receta in enumerate(lista['recetas']):
+                if(receta.get('Nombre') == nombre):
+                    indice=index   
+            receta={
+            'Nombre':self.nombre,
+            'Ingredientes':self.ingredientes,
+            'Preparacion':self.preparacion,
+            'Imagen':self.imagen,
+            'Tiempo_prepacion':self.tiempo_preparacion,
+            'Tiempo_coccion':self.tiempo_coccion,
+            'Fecha_creacion':self.fecha_creacion,
+            'Etiquetas':self.etiquetas,
+            'Favorita':self.favorita
+            }      
+            with open ('recetas.txt','w') as archivo:
+                archivo.write('')
+            with open('recetas.txt','r+') as archivo:
+                lista['recetas'][indice]=receta        
+                json.dump(lista,archivo,indent=4)
+        except:
+            print('Hubo un problema, no se encuentra elemento!!!')    
     
     def eliminar_receta(nombre):
         try:
@@ -86,8 +109,9 @@ y sazonar a gusto'''
 # r2.crear_receta()
 # r1=Receta('Humita',ing,prep,400,30,et,None,False)
 # r1.crear_receta() 
-# r3=Receta('Empanada',ing,prep,400,30,et,None,False)
-# r3.crear_receta()  
+#r3=Receta('Empanada',ing,prep,400,30,et,None,False)
+#r3.crear_receta()  
 #r4=Receta('Humita',ing,prep,400,30,et,None,False)
 #r4.crear_receta() 
-Receta.eliminar_receta('Empanada')
+#Receta.eliminar_receta('Empanada')
+Receta('Empanada',ing,prep,800,400,et,None,True).modificar_receta('Empanada')
