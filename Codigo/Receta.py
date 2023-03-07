@@ -15,7 +15,7 @@ class Receta:
         self.etiquetas=etiquetas
         self.favorita=favorita
         try:
-            with open('recetas.txt','x')as archivo:
+            with open('recetas.json','x')as archivo:
                 data={}
                 data['recetas']=[]
                 json.dump(data,archivo,indent=4)
@@ -37,23 +37,21 @@ class Receta:
         
         nombre=receta.get('Nombre')          
         print(nombre)
-        with open('recetas.txt','r') as archivo:
+        with open('recetas.json','r') as archivo:
             lista=json.load(archivo)
         list_receta=[]       
         for list in lista['recetas']:
             list_receta.append(list.get('Nombre'))  
         if nombre not in list_receta:            
-            with open ('recetas.txt','w') as archivo:
-                archivo.write('')
-            with open('recetas.txt','r+') as archivo:        
+            with open ('recetas.json','w') as archivo:
                 lista['recetas'].append(receta)
                 json.dump(lista,archivo,indent=4)      
+                  
     
     def modificar_receta(self,nombre):
         try:
-            with open('recetas.txt','r') as archivo:
-                lista=json.load(archivo)  
-            print(lista)    
+            with open('recetas.json','r') as archivo:
+                lista=json.load(archivo)    
             indice=None    
             for index,receta in enumerate(lista['recetas']):
                 if(receta.get('Nombre') == nombre):
@@ -69,9 +67,7 @@ class Receta:
             'Etiquetas':self.etiquetas,
             'Favorita':self.favorita
             }      
-            with open ('recetas.txt','w') as archivo:
-                archivo.write('')
-            with open('recetas.txt','r+') as archivo:
+            with open ('recetas.json','w') as archivo:
                 lista['recetas'][indice]=receta        
                 json.dump(lista,archivo,indent=4)
         except:
@@ -79,18 +75,15 @@ class Receta:
     
     def eliminar_receta(nombre):
         try:
-            with open('recetas.txt','r') as archivo:
+            with open('recetas.json','r') as archivo:
                 lista=json.load(archivo)  
             for index,receta in enumerate(lista['recetas']):
                 if(receta.get('Nombre') == nombre):
                     lista['recetas'].pop(index) 
-                    break
-                else:
-                    return print('No se encuentra elemento!!!')    
-            with open ('recetas.txt','w') as archivo:
-                archivo.write('')
-            with open('recetas.txt','r+') as archivo:        
-                json.dump(lista,archivo,indent=4)
+                    break   
+            with open ('recetas.json','w') as archivo:
+                json.dump(lista,archivo,indent=4)        
+                
         except:
             print('Hubo un problema, no se encuentra elemento!!!')                  
                   
@@ -109,9 +102,9 @@ y sazonar a gusto'''
 # r2.crear_receta()
 # r1=Receta('Humita',ing,prep,400,30,et,None,False)
 # r1.crear_receta() 
-#r3=Receta('Empanada',ing,prep,400,30,et,None,False)
-#r3.crear_receta()  
-#r4=Receta('Humita',ing,prep,400,30,et,None,False)
-#r4.crear_receta() 
-#Receta.eliminar_receta('Empanada')
-Receta('Empanada',ing,prep,800,400,et,None,True).modificar_receta('Empanada')
+# r3=Receta('Empanada',ing,prep,400,30,et,None,False)
+# r3.crear_receta()  
+# r4=Receta('Locro',ing,prep,400,30,et,None,False)
+# r4.crear_receta() 
+Receta.eliminar_receta('Guiso')
+# Receta('Humita',ing,prep,100,10,et,None,True).modificar_receta('Humita')

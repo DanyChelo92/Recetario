@@ -1,37 +1,6 @@
 {
     "recetas": [
         {
-            "Nombre": "Guiso",
-            "Ingredientes": [
-                [
-                    1,
-                    "unidad",
-                    "papa"
-                ],
-                [
-                    1,
-                    "kg",
-                    "carne"
-                ],
-                [
-                    2,
-                    "un",
-                    "cebolla"
-                ]
-            ],
-            "Preparacion": "cocinar todo junto,\ny sazonar a gusto",
-            "Imagen": null,
-            "Tiempo_prepacion": 400,
-            "Tiempo_coccion": 30,
-            "Fecha_creacion": "2023-03-06",
-            "Etiquetas": [
-                "rico",
-                "sano",
-                "verano"
-            ],
-            "Favorita": false
-        },
-        {
             "Nombre": "Humita",
             "Ingredientes": [
                 [
@@ -52,15 +21,15 @@
             ],
             "Preparacion": "cocinar todo junto,\ny sazonar a gusto",
             "Imagen": null,
-            "Tiempo_prepacion": 400,
-            "Tiempo_coccion": 30,
-            "Fecha_creacion": "2023-03-06",
+            "Tiempo_prepacion": 100,
+            "Tiempo_coccion": 10,
+            "Fecha_creacion": "2023-03-07",
             "Etiquetas": [
                 "rico",
                 "sano",
                 "verano"
             ],
-            "Favorita": false
+            "Favorita": true
         },
         {
             "Nombre": "Empanada",
@@ -83,15 +52,46 @@
             ],
             "Preparacion": "cocinar todo junto,\ny sazonar a gusto",
             "Imagen": null,
-            "Tiempo_prepacion": 800,
-            "Tiempo_coccion": 400,
-            "Fecha_creacion": "2023-03-06",
+            "Tiempo_prepacion": 400,
+            "Tiempo_coccion": 30,
+            "Fecha_creacion": "2023-03-07",
             "Etiquetas": [
                 "rico",
                 "sano",
                 "verano"
             ],
-            "Favorita": true
+            "Favorita": false
+        },
+        {
+            "Nombre": "Locro",
+            "Ingredientes": [
+                [
+                    1,
+                    "unidad",
+                    "papa"
+                ],
+                [
+                    1,
+                    "kg",
+                    "carne"
+                ],
+                [
+                    2,
+                    "un",
+                    "cebolla"
+                ]
+            ],
+            "Preparacion": "cocinar todo junto,\ny sazonar a gusto",
+            "Imagen": null,
+            "Tiempo_prepacion": 400,
+            "Tiempo_coccion": 30,
+            "Fecha_creacion": "2023-03-07",
+            "Etiquetas": [
+                "rico",
+                "sano",
+                "verano"
+            ],
+            "Favorita": false
         }
     ]
 }
